@@ -23,7 +23,7 @@
     </div>
     <div class="daohang0">
       <div class="logo">
-        <img class="datu" :src="imgsrc" alt />
+        <img class="datu" @click="gofirst" :src="imgsrc" alt />
       </div>
 
       <div class="daohang1">
@@ -90,6 +90,9 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    gofirst(){
+       this.$router.push("/shouye1");
     }
   }
 };

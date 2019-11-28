@@ -128,12 +128,12 @@ export default {
       let datalist = new FormData();
       datalist.append("email", this.inputemail);
       datalist.append("captcha", this.emailcode);
-      this.$http.post("/api/users/add", datalist).then(res => {
+      this.$http.post("/api/users/id/captcha", datalist).then(res => {
         console.log(res);
-        if (res.data.msg == "用户已存在") {
-          this.$message.success("登陆成功");
-          this.$router.push("/shouye1");
-        }
+        // if (res.data.msg == "用户已存在") {
+        //   this.$message.success("登陆成功");
+        //   this.$router.push("/shouye1");
+        // }
       });
     },
     // <!--提交注册-->

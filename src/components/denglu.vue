@@ -179,11 +179,13 @@
         </div>
       </div>
     </div>
+    <footerpage />
   </div>
 </template>
 
 <script>
 import img from "@/images/1.jpg";
+import footerpage from "../components/footer";
 export default {
   name: "Register",
   data() {
@@ -270,7 +272,7 @@ export default {
     sendCode() {
       let tel = this.ruleForm2.tel;
       this.$http
-        .get("/api/users", {
+        .get("/dizhi/users", {
           params: { email: tel }
         })
         .then(res => {
@@ -301,15 +303,15 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           setTimeout(() => {
-            let denglu=new FormData()
-            denglu.append('email',this.ruleForm2.tel)
-            denglu.append('captcha',this.ruleForm2.smscode)
-            this.$http.post('/api/users/add',denglu).then(res=>{
-              console.log(res)
-              if(res.data.status==0){
-                this.$router.push('/shouye1');
+            let denglu = new FormData();
+            denglu.append("email", this.ruleForm2.tel);
+            denglu.append("captcha", this.ruleForm2.smscode);
+            this.$http.post("/dizhi/users/add", denglu).then(res => {
+              console.log(res);
+              if (res.data.status == 0) {
+                this.$router.push("/shouye1");
               }
-            })
+            });
           }, 400);
         } else {
           console.log("error submit!!");
@@ -330,6 +332,10 @@ export default {
         return false;
       }
     }
+  },
+
+  components: {
+    footerpage
   }
 };
 </script>
@@ -563,5 +569,17 @@ export default {
 }
 .sr_code {
   width: 49%;
+}
+.p13{
+  color: white;
+  font-size: 24px;
+  width: 200px;
+  height: 40px;
+  background-color: red;
+  box-shadow: 0px 0px 5px #333;
+  text-align: center;
+  line-height: 40px;
+  border-radius:50px;
+  margin-top: 40px; 
 }
 </style>

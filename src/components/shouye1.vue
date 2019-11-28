@@ -21,11 +21,11 @@
       <el-tag>四年级</el-tag>
       <el-tag>五年级</el-tag>
       <el-tag>六年级</el-tag>
-      <el-tag>初一</el-tag>
+      <el-tag class="fenlei0">初一</el-tag>
       <el-tag>初二</el-tag>
       <el-tag>初三</el-tag>
       <el-tag>高一</el-tag>
-      <el-tag class="fenlei0">高二</el-tag>
+      <el-tag>高二</el-tag>
       <el-tag>高三</el-tag>
     </div>
     <div>
@@ -64,11 +64,13 @@
         </div>
       </div>
     </div>
+    <footerpage />
   </div>
 </template>
 
 <script>
 import page from "../components/shouye";
+import footerpage from "../components/footer";
 export default {
   data() {
     return {
@@ -110,17 +112,15 @@ export default {
   },
   methods: {
     sort() {
-      this.$http
-        .get("/ap/course")
-        .then(res => {
-          var data = res.data;
-          this.allList = data.data;
-          console.log(this.allList);
-        });
+      this.$http.get("/ap/course").then(res => {
+        var data = res.data;
+        this.allList = data.data;
+        console.log(this.allList);
+      });
     },
     btn(val) {
       console.log(val);
-      this.$router.push("/detail?info="+val);
+      this.$router.push("/detail?info=" + val);
     },
     imgLoad() {
       this.$nextTick(() => {
@@ -143,7 +143,8 @@ export default {
     );
   },
   components: {
-    page
+    page,
+    footerpage
   }
 };
 </script>

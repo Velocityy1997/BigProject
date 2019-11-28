@@ -146,7 +146,7 @@ export default {
       margin: auto;
   }
   .footer4-1{
-      width: 84px;
+      width: 83px;
       height: 30px;
       /* float: left; */
       margin: auto
