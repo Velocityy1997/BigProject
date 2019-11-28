@@ -20,7 +20,7 @@ Vue.use(Router)
 export default new Router({
     mode: 'history',
     routes: [{
-            path: '/',
+            path: '/myorder',
             name: 'myorder',
             component: myorder
         },
@@ -51,7 +51,7 @@ export default new Router({
             component: setup
         },
         {
-            path: '/denglu',
+            path: '/',
             name: 'denglu',
             component: denglu
         },

@@ -151,12 +151,13 @@
                 </div>
                 <span slot="footer" class="dialog-footer">
                   <el-button @click="centerDialogVisible = false">取 消</el-button>
-                  <el-button type="primary" @click="centerDialogVisible = false">加入购物车</el-button>
+                  <el-button type="primary" @click="centerDialogVisible = false">
+                    <a href="/shoppingcart">加入购物车</a>
+                  </el-button>
                 </span>
               </el-dialog>
             </div>
 
-            
             <div class="x_xgoods">立即购买</div>
           </div>
           <img :src="x_img" alt class="x_imgs" />
@@ -269,6 +270,7 @@ export default {
       value: ""
     };
   },
+  
   created() {
     this.courseid = this.$route.query.info;
     // console.log(this.course_id);
@@ -292,7 +294,7 @@ export default {
   },
   components: {
     page
-  },
+  }
 };
 </script>
 
@@ -592,15 +594,19 @@ export default {
   margin-top: 20px;
 }
 .el-dialog {
-    margin-top: 0vh;
-    height: 500px;
+  margin-top: 0vh;
+  height: 500px;
 }
-.el-dialog__footer{
+.el-dialog__footer {
   padding: 340px 20px 20px;
 }
 .el-button--primary {
-    color: #FFF;
-    background-color: red;
-    border-color: red;
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+.dialog-footer a{
+  color: white;
+  text-decoration: none;
 }
 </style>

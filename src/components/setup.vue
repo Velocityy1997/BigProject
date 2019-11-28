@@ -3,21 +3,7 @@
     <!-- 引入插件 -->
     <!-- 引入头像 -->
 
-    <div class="top">
-      <div class="topcontent">
-        <div class="topcontain">
-          <div class="topcontain1">网校首页</div>
-          <div class="topcontain2">教师资格证公示</div>
-          <div class="topcontain3">客户端下载</div>
-          <div class="topcontain4">我的订单</div>
-          <div class="topcontain5">设置</div>
-          <div class="topcontain6">
-            用户名
-            <img src="../assets/arrow.png" alt />
-          </div>
-        </div>
-      </div>
-    </div>
+    <tops />
     <div class="daohang0">
       <div class="logo">
         <img class="datu" @click="toshouye" :src="imgsrc" alt />
@@ -329,12 +315,12 @@
 </template>
 
 <script>
+import tops from "../components/top";
 import img from "@/images/1.jpg";
 import img1 from "@/assets/footer1.png";
 import img2 from "@/assets/footer2.png";
 import img3 from "@/assets/footer3.png";
 export default {
-  name: "top",
   data() {
     // <!--验证邮箱是否合法-->
     let checkTel = (rule, value, callback) => {
@@ -475,7 +461,6 @@ export default {
         avatar: "",
         age: "",
         yanzheng: "",
-
         new_email: ""
       }
     };
@@ -485,6 +470,9 @@ export default {
   //     console.log(res);
   //   })
   // },
+  components: {
+    tops
+  },
   created() {
     this.$http.put("/dizhi/Users/id/passwordHaveOrNot").then(res => {
       console.log(res);
@@ -582,7 +570,7 @@ export default {
       this.n = item;
     },
     getcode() {},
-    toshouye(){
+    toshouye() {
       this.$router.push("/shouye1");
     },
     // <!--发送验证码-->

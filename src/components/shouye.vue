@@ -10,13 +10,13 @@
             <a href="|">客户端下载</a>
           </el-breadcrumb-item>
           <el-breadcrumb-item class="daohang_wenzi">
-            <a href="|">我的订单</a>
+            <a href="/myorder">我的订单</a>
           </el-breadcrumb-item>
           <el-breadcrumb-item class="daohang_wenzi">
-            <a href="|">设置</a>
+            <a href="/setup">设置</a>
           </el-breadcrumb-item>
           <el-breadcrumb-item class="daohang_wenzi">
-            <a href="|">立即登陆</a>
+            <a href="/login">立即登陆</a>
           </el-breadcrumb-item>
         </el-breadcrumb>
       </div>
@@ -33,18 +33,10 @@
           mode="horizontal"
           @select="handleSelect"
         >
-          <el-menu-item index="4">
-            <a href="#">选课中心</a>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <a href="#">免费讲座</a>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <a href="#">学习中心</a>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <a href="#">1对1</a>
-          </el-menu-item>
+          <el-menu-item index="4">选课中心</el-menu-item>
+          <el-menu-item index="4">免费讲座</el-menu-item>
+          <el-menu-item index="4">学习中心</el-menu-item>
+          <el-menu-item index="4">1对1</el-menu-item>
           <el-submenu index="2">
             <template slot="title">发现更多</template>
             <el-menu-item index="2-1">编程社区</el-menu-item>
