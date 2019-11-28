@@ -73,6 +73,7 @@ export default {
       height: 215px;
       background-color: #333333;
       margin: auto;
+      margin-top: 40px;
   }
   .footer1{
       width: 1000px;
